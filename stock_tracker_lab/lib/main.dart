@@ -33,8 +33,24 @@ class MyHomePage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: const Center(
-        child: Text('Widgets Basics'),
+      body: const Column(
+        children: [
+          Text(
+            "Today's value: \$1000",
+            key: ValueKey('todayValue'),
+          ),
+          Text(
+            'Revenue/Loss: +5%',
+            key: ValueKey('revenueLoss'),
+          ),
+          Column(
+            children: [
+              Text('Company 1: \$300'),
+              Text('Company 2: \$400'),
+              Text('Company 3: \$300'),
+            ],
+          ),
+        ],
       ),
     );
   }

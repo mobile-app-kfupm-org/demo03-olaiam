@@ -35,9 +35,15 @@ class MyHomePage extends StatelessWidget {
       ),
       body: const Column(
         children: [
-          Text(
-            "Today's value: \$1000",
-            key: ValueKey('todayValue'),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.purpleAccent,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: const Text(
+              "Today's value: \$1000",
+              key: ValueKey('todayValue'),
+            ),
           ),
           Text(
             'Revenue/Loss: +5%',

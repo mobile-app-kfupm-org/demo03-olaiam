@@ -56,8 +56,37 @@ class MyHomePage extends StatelessWidget {
               Text('Company 3: \$300'),
             ],
           ),
+          AnalyticsButton(),
         ],
       ),
+    );
+  }
+}
+class AnalyticsButton extends StatefulWidget {
+  const AnalyticsButton({super.key});
+
+  @override
+  State<AnalyticsButton> createState() => _AnalyticsButtonState();
+}
+
+class _AnalyticsButtonState extends State<AnalyticsButton> {
+  bool _showAnalytics = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        FilledButton(
+          onPressed: () {
+            setState(() {
+              _showAnalytics = !_showAnalytics;
+            });
+          },
+          child: Text('Show Analytics'),
+        ),
+        if (_showAnalytics)
+          const Text('Detailed analytics go here...'),
+      ],
     );
   }
 }
